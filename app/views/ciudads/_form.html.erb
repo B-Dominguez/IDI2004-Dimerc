@@ -1,0 +1,32 @@
+<%= form_with(model: @ciudad, url: pai_ciudads_path, local: true) do |form| %>
+  <% if ciudad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ciudad.errors.count, "error") %> prohibited this ciudad from being saved:</h2>
+
+      <ul>
+      <% ciudad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :ciudad_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :ciudad_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ubicacion %>
+    <%= form.text_field :ubicacion, id: :ciudad_ubicacion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

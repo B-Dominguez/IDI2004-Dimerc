@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_pub: 1
+  titulo: MyString
+  autor: MyString
+  fecha: 2018-09-14
+  ciudad: MyString
+  tipo: MyString
+  contenido: MyString
+  ptje_rep: 1
+
+two:
+  id_pub: 1
+  titulo: MyString
+  autor: MyString
+  fecha: 2018-09-14
+  ciudad: MyString
+  tipo: MyString
+  contenido: MyString
+  ptje_rep: 1

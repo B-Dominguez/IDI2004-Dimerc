@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  itid: 1
+  nombre: MyString
+  descripcion: MyString
+  duracion: 1
+  lugares: MyString
+  actividades: MyString
+
+two:
+  itid: 1
+  nombre: MyString
+  descripcion: MyString
+  duracion: 1
+  lugares: MyString
+  actividades: MyString

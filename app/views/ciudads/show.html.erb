@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <h1 class="display-3"><%= @ciudad.nombre %>, <%= @ciudad.pai.nombre %></h1>
+    <p class="lead">
+      <%= @ciudad.descripcion %>
+    </p>
+
+    <!--
+    <p>
+      <strong>Suscriptores:</strong>
+      %= @ciudad.suscriptores %     #agregar <>
+    </p>
+    -->
+
+    <p>
+      <strong>Ubicación:</strong>
+      <%= @ciudad.ubicacion %>
+    </p>
+  </div>
+  <div class="row">
+    <a class="btn btn-primary" href=<%=
+    pai_ciudad_publicacions_path(@ciudad.pai_id, @ciudad.id)%> role="button">
+    Ver Publicaciones</a>
+  </div>
+  <div class="row">
+    <%= link_to 'Editar', edit_pai_ciudad_path(@ciudad.pai, @ciudad.id) %> |
+    <%= link_to 'Volver', pai_ciudads_path(@ciudad.pai) %>
+  </div>
+</div>

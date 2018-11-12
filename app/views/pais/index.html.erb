@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+    <div class="row">
+      <h1>Paises</h1>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Suscriptores</th>
+            <th>Ubicación</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @pais.each do |pai| %>
+            <tr>
+              <td><%= pai.nombre %></td>
+              <td><%= pai.descripcion %></td>
+              <td><%= pai.suscriptores %></td>
+              <td><%= pai.ubicacion %></td>
+              <td>
+                <div class="btn-group" role="group" aria-label="Pais options">
+                  <button type="button" class="btn btn-secondary">
+                    <%= link_to 'Ver más', pai %></button>
+                  <button type="button" class="btn btn-secondary">
+                    <%= link_to 'Editar', edit_pai_path(pai) %></button>
+                  <button type="button" class="btn btn-secondary">
+                    <%= link_to 'Eliminar', pai, method: :delete,
+                    data: { confirm: '¿Desea eliminar este país?' } %></button>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  <div class="row allign-items-end">
+    <div class="col">
+      <%= form_tag(pais_path, method: :get) do %>
+      <%= text_field_tag :term, params[:term] %>
+      <%= submit_tag 'Buscar' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <%= link_to 'Crear País', new_pai_path %>
+    <%= link_to 'Volver', welcome_index_path %>
+  </div>
+</div>

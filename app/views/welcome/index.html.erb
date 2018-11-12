@@ -1,0 +1,30 @@
+
+<div class="container">
+<h1>¡Bienvenido!</h1>
+</div>
+
+<tbody>
+    <div class="container">
+    <tr>
+      <div class="row">
+      <td><%= link_to 'Paises',pais_path %></td>
+      </div>
+      <div class="row">
+      <td><%= link_to 'Itinerarios',itinerarios_path %></td>
+      </div>
+      <% if user_signed_in? %>
+        <div class="row">
+          <td><%= link_to 'Cerrar Sesión',destroy_user_session_path,
+            method: :delete %></td>
+        </div>
+      <% else %>
+        <div class="row">
+        <td><%= link_to 'Inicia Sesión',new_user_session_path %></td>
+        </div>
+        <div class="row">
+        <td><%= link_to 'Regístrate',new_user_registration_path %></td>
+        </div>
+      <% end %>
+    </tr>
+    </div>
+</tbody>

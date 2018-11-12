@@ -1,0 +1,39 @@
+<%= form_with(model: @publicacion, url: pai_ciudad_publicacions_path, local: true)  do |form| %>
+  <% if publicacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(publicacion.errors.count, "error") %> prohibited this publicacion from being saved:</h2>
+
+      <ul>
+      <% publicacion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, id: :publicacion_titulo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.date_select :fecha, id: :publicacion_fecha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contenido %>
+    <%= form.text_field :contenido, id: :publicacion_contenido %>
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="custom-file">
+      Seleccione archivo de imagen si desea incluir una
+      <input type="file" class="custom-file-input" id="inputGroupFile02">
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

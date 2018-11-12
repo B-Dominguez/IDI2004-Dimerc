@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pid: 1
+  nombre: MyString
+  descripcion: MyString
+  suscriptores: 1
+  ubicacion: MyString
+
+two:
+  pid: 1
+  nombre: MyString
+  descripcion: MyString
+  suscriptores: 1
+  ubicacion: MyString

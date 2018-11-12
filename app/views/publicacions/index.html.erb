@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h1>Publicaciones en <%= @ciudad.nombre %></h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Fecha</th>
+        <th>Tipo</th>
+        <th>Reputación</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @ciudad.publicacions.each do |publicacion| %>
+        <tr>
+          <td><%= publicacion.titulo %></td>
+          <td> No hay publicacion.user.nombre</td>
+          <td><%= publicacion.fecha %></td>
+          <td><%= publicacion.tipo %></td>
+          <td><%= publicacion.ptje_rep %></td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Pais options">
+              <button type="button" class="btn btn-secondary">
+                <%= link_to 'Ver más', pai_ciudad_publicacion_path(
+                publicacion.ciudad.pai_id, publicacion.ciudad_id, publicacion)
+                %></button>
+              <button type="button" class="btn btn-secondary">
+                <%= link_to 'Editar', edit_pai_ciudad_publicacion_path(
+                publicacion.ciudad.pai_id, publicacion.ciudad_id, publicacion)%>
+              </button>
+              <button type="button" class="btn btn-secondary">
+                <%= link_to 'Eliminar', pai_ciudad_publicacion_path(
+                publicacion.ciudad.pai_id, publicacion.ciudad_id, publicacion),
+                method: :delete, data: { confirm:
+                  '¿Desea eliminar esta publicación?' } %></button>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <div class="row">
+    <%= form_tag(pai_ciudads_path, method: :get) do %>
+      <%= text_field_tag :term, params[:term] %>
+      <%= submit_tag 'Buscar' %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <%= link_to 'Crear Publicación', new_pai_ciudad_publicacion_path %>
+    <%= link_to 'Volver', pai_ciudads_path %>
+  </div>
+</div>

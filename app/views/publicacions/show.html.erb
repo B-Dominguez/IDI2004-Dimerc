@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <h1 class="display-3"><%= @publicacion.titulo %></h1>
+
+    <p class="lead">
+      <strong>Autor:</strong> <%=@publicacion.user%> (hay que arreglar nombre)
+    </p>
+    <p>
+      <strong>Ptje rep:</strong>
+      <%= @publicacion.ptje_rep %>
+    </p>
+    <p>
+      <strong>Ciudad:</strong>
+      <%= @publicacion.ciudad.nombre %>, <%= @publicacion.ciudad.pai.nombre %>
+    </p>
+    <p>
+      <strong>Fecha:</strong>
+      <%= @publicacion.fecha %>
+    </p>
+    <p>
+      <strong>Ubicación:</strong>
+      <%= @publicacion.ciudad.ubicacion %>
+    </p>
+    <p class="lead">
+      <%= @publicacion.contenido %>
+    </p>
+
+    <!--
+    <p>
+      <strong>Suscriptores:</strong>
+      %= @ciudad.suscriptores %     #agregar <>
+    </p>
+    -->
+
+  </div>
+  <div class="row">
+    <%= link_to "Me gusta",like_publicacion_path(@publicacion),  method: :put,
+    :class => 'btn btn-success btn-sm'%>
+    <%= @publicacion.get_upvotes.size %>
+    <%= link_to "Me enoja", unlike_publicacion_path(@publicacion),
+    method: :put, :class => 'btn btn-danger btn-sm'%>
+    <%= @publicacion.get_downvotes.size %>
+  </div>
+
+  <div class="row">
+    <a class="btn btn-primary" href=<%=
+    pai_ciudad_publicacion_comentarios_path(@publicacion.ciudad.pai_id,
+    @publicacion.ciudad_id, @publicacion)%> role="button">
+    Ver Comentarios</a>
+  </div>
+
+  <div class="row">
+    <%= link_to 'Editar', edit_pai_ciudad_publicacion_path(
+    @publicacion.ciudad.pai_id, @publicacion.ciudad_id, @publicacion) %>
+    <%= link_to 'Volver',pai_ciudad_publicacions_path(
+    @publicacion.ciudad.pai_id, @publicacion.ciudad_id) %>
+  </div>
+</div>

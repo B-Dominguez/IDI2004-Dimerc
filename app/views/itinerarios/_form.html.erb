@@ -1,0 +1,42 @@
+<%= form_with(model: itinerario, local: true) do |form| %>
+  <% if itinerario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(itinerario.errors.count, "error") %> prohibited this itinerario from being saved:</h2>
+
+      <ul>
+      <% itinerario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :itinerario_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :itinerario_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duracion %>
+    <%= form.number_field :duracion, id: :itinerario_duracion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lugares %>
+    <%= form.text_field :lugares, id: :itinerario_lugares %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actividades %>
+    <%= form.text_field :actividades, id: :itinerario_actividades %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

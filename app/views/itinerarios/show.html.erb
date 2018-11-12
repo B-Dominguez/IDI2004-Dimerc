@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <h1 class="display-3"><%= @itinerario.nombre %></h1>
+    <p class="lead">
+      <%= @itinerario.descripcion %>
+    </p>
+    <p>
+      <strong>Duración:</strong>
+      <%= @itinerario.duracion %>
+    </p>
+
+    <p>
+      <strong>Lugares:</strong>
+      <%= @itinerario.lugares %>
+    </p>
+
+    <p>
+      <strong>Actividades:</strong>
+      <%= @itinerario.actividades %>
+    </p>
+  </div>
+  <div class="row">
+    <%= link_to 'Editar', edit_itinerario_path(@itinerario) %> |
+    <%= link_to 'Volver', itinerarios_path %>
+  </div>
+</div>

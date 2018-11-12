@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @comentario.id %>
+</p>
+
+<p>
+  <strong>Pertenece:</strong>
+  <%= @comentario.pertenece %>
+</p>
+
+<p>
+  <strong>Contenido:</strong>
+  <%= @comentario.contenido %>
+</p>
+
+<p>
+  <strong>Reputación:</strong>
+  <%= @comentario.ptje_rep %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @comentario.fecha %>
+</p>
+
+<%= link_to 'Editar', edit_pai_ciudad_publicacion_comentario_path(@comentario.publicacion.ciudad.pai_id, @comentario.publicacion.ciudad_id, @comentario.publicacion_id, @comentario) %> |
+<%= link_to 'Volver', pai_ciudad_publicacion_comentarios_path(@comentario.publicacion.ciudad.pai_id, @comentario.publicacion.ciudad_id, @comentario.publicacion_id) %>

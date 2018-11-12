@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_comentario: 1
+  pertenece: MyString
+  autor: MyString
+  contenido: MyString
+  ptje_rep: 1
+  fecha: 2018-09-13
+
+two:
+  id_comentario: 1
+  pertenece: MyString
+  autor: MyString
+  contenido: MyString
+  ptje_rep: 1
+  fecha: 2018-09-13

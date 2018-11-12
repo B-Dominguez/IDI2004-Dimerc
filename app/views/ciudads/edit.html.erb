@@ -1,0 +1,6 @@
+<h1>Editar Ciudad</h1>
+
+<%= render 'form', ciudad: @ciudad %>
+
+<%= link_to 'Ver', pai_ciudad_path %> |
+<%= link_to 'Volver', pai_ciudads_path(@ciudad.pai)  %>
