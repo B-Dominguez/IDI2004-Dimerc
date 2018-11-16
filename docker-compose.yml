@@ -12,6 +12,6 @@ services:
     volumes:
       - .:/example
     ports:
-      - "3001:3001"
+      - "9292:9292"
     depends_on:
       - postgres
