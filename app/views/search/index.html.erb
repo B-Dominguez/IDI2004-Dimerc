@@ -59,5 +59,37 @@
         </div>
         <div class="col-sm-1" style="width:12.5%;"></div>
     </div>
+
+    <%= form_for(current_user.search_person, url:search_path) do |form| %>
+      <% if current_user.search_person.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(current_user.search_person.errors.count, "error")
+             %> prohibited this search from being saved:</h2>
+
+          <ul>
+          <% current_user.search_person.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="form-group">
+        <%= form.label :area %>
+        <%= form.text_field :area, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :nombre %>
+        <%= form.text_field :nombre, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :cargo %>
+        <%= form.text_field :cargo, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.submit "Buscar", class: "btn btn-primary pull-right" %>
+      </div>
+    <% end %>
+
+
   </div>
 <% end %>
