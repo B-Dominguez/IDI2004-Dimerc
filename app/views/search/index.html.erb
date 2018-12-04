@@ -1,0 +1,56 @@
+<div class="container">
+  <br><br><br>
+  <div class="row">
+    <h1 class="h-red text-center">Rellena una o más casillas para buscar</h1>
+    <p class="lead l-light text-center">(no es necesario rellenar todos los
+      espacios)</p>
+  </div>
+  <br><br>
+  <div class="row">
+      <div class="col-sm-2" style="width:12.5%;"></div>
+      <div class="col-sm-3">
+        <br>
+        <p class="lead l-mid text-center">Área</p>
+        <div class="form-group">
+          <label for="SelArea">area:
+            <script type='text/javascript'>
+              alert(selectedArea);
+            </script>
+            <%= $selectedArea %>
+          </label>
+          <select class="form-control" id="SelArea">
+            <option>Todas las áreas</option>
+            <option>E-commerce</option>
+            <option>Dropship</option>
+            <option>Fulfillment</option>
+            <option>Productos</option>
+            <option>Compras</option>
+            <option>Ejecutiva/o ventas</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <br>
+        <p class="lead l-mid text-center">Nombre y/o Apellido</p>
+      </div>
+      <div class="col-sm-3">
+        <br>
+        <p class="lead l-mid text-center">Cargo</p>
+        <div class="form-group">
+          <label for="SelCargo">cargo:</label>
+          <select class="form-control" id="SelArea">
+            <option>Todas las áreas</option>
+            <option>E-commerce</option>
+            <option>Dropship</option>
+            <option>Fulfillment</option>
+            <option>Productos</option>
+            <option>Compras</option>
+            <option>Ejecutiva/o ventas</option>
+          </select>
+          <br>
+          <button type="submit" class="btn btn-default pull-right">Buscar</button>
+        </div>
+      </div>
+      <div class="col-sm-1" style="width:12.5%;"></div>
+  </div>
+</div>

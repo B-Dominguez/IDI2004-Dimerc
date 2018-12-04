@@ -13,3 +13,8 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$('.SelArea').change(function () {
+    var selectedArea = $(this).find("option:selected").val();
+    alert(selectedArea);
+})
