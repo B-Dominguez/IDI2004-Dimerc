@@ -6,4 +6,5 @@ class SearchPerson < ApplicationRecord
     self.nombre = ""
     self.cargo = "todos los cargos"
   end
+
 end

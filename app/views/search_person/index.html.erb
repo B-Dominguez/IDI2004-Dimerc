@@ -1,0 +1,63 @@
+<% if current_user == nil%>
+  <div class="jumbotron text-center">
+    <h3> Debes iniciar sesión para poder usar esta herramienta</h3>
+  </div>
+<% else %>
+  <div class="container">
+    <br><br><br>
+    <div class="row">
+      <h1 class="h-red text-center">Rellena una o más casillas para buscar</h1>
+      <p class="lead l-light text-center">(no es necesario rellenar todos los
+        espacios)</p>
+    </div>
+    <br><br>
+
+    <%= form_for(@search, url: search_person_path) do |form| %>
+      <% if @search.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@search.errors.count, "error")
+             %> prohibited this search from being saved:</h2>
+
+          <ul>
+            <% @search.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="col-sm-2" style="width:12.5%;"></div>
+        <div class="col-sm-3">
+          <br>
+          <p class="lead l-mid text-center">Área</p>
+          <div class="form-group">
+            <%= form.select(:area, [["todas las áreas", "todas las áreas"],
+            ["e-commerce", "e-commerce"], ["dropship", "dropship"], ["fulfillment",
+            "fulfillment"]]) %>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <br>
+          <p class="lead l-mid text-center">Nombre y/o Apellido</p>
+          <div class="form-group">
+            <%= form.text_field :nombre, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <br>
+          <p class="lead l-mid text-center">Cargo</p>
+          <div class="form-group">
+            <%= form.select(:cargo, [["todos los cargos", "todos los cargos"],
+            ["e-commerce", "e-commerce"], ["dropship", "dropship"], ["fulfillment",
+            "fulfillment"]]) %>
+          </div>
+          <div class="form-group">
+            <%= form.submit "Buscar", class: "btn btn-primary pull-right" %>
+          </div>
+        </div>
+        <div class="col-sm-1" style="width:12.5%;"></div>
+      </div>
+    <% end %>
+
+  </div>
+<% end %>
