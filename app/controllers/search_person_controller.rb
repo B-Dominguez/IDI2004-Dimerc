@@ -1,7 +1,9 @@
 class SearchPersonController < ApplicationController
   def index
-    @search = current_user.search_person
-    @search.reset
+    if current_user != nil
+      @search = current_user.search_person
+      @search.reset
+    end
   end
 
   def search_params

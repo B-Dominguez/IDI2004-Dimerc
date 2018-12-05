@@ -31,6 +31,38 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellido %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :anexo %><br />
+    <%= f.text_field :anexo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cargo %><br />
+    <%= f.select(:cargo, [["e-commerce", "e-commerce"], ["dropship",
+    "dropship"], ["fulfillment", "fulfillment"]]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :area_conocimiento %><br />
+    <%= f.select(:area, [["e-commerce", "e-commerce"], ["dropship",
+    "dropship"], ["fulfillment", "fulfillment"]]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ubicacion %><br />
+    <%= f.text_field :location %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
