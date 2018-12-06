@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :search_person, dependent: :destroy
+  has_one_attached :image
 
   before_create :default_search_person
   def default_search_person
