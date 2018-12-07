@@ -106,3 +106,43 @@
 .l-mid {
   color: #666666;
 }
+
+.profilepic {
+  height: 500px;
+  width: 500px;
+  border: 1px solid;
+}
+.user {
+    width: 180px;
+    height: 270px;
+    display: inline;
+}
+.user h5 {
+    text-align: center;
+}
+.user h6 {
+    text-align: center;
+}
+.aForuser:visited, .aForuser:link,
+.aForuser:active, .aForuser:focus {
+    color:black;
+    background-color: white;
+    display: inline-block;
+    text-decoration:none;
+    outline: 0;
+    height: 270px;
+    width: 180px;
+}
+.aForuser:hover {
+    color:black;
+    background-color: white;
+    opacity: 0.4;
+    display: inline-block;
+    text-decoration:none;
+    outline: 0;
+    height: 270px;
+    width: 180px;
+}
+.user-pic {
+  border-radius: 50%;
+}

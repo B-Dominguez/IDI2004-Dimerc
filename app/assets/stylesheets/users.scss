@@ -6,3 +6,36 @@
   width: 500px;
   border: 1px solid;
 }
+.user {
+    width: 300px;
+    height: 300px;
+    display: inline;
+}
+.user h2 {
+    text-align: center;
+}
+.user h4 {
+    text-align: center;
+}
+.aForuser:visited, .aForuser:link,
+.aForuser:active, .aForuser:focus {
+    color:black;
+    display: inline-block;
+    text-decoration:none;
+    outline: 0;
+    height: 360px;
+    width: 300px;
+}
+.aForuser:hover {
+    color:black;
+    background-color: white;
+    opacity: 0.4;
+    display: inline-block;
+    text-decoration:none;
+    outline: 0;
+    height: 360px;
+    width: 300px;
+}
+.user-pic {
+  border-radius: 50%;
+}

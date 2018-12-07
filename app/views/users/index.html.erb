@@ -1,8 +1,29 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
+  <div class="row" style="background-color: #f3f3f3ff">
+    <br>
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-11">
       <% @users.each do |user| %>
-      <%= link_to user.email, user %>
+        <% if @current_id != user.id %>
+          <div class="user d-inline">
+            <a class="aForuser" href=<%= user_path(user.id) %>>
+              <br>
+              <% if user.image.attached? %>
+                <div class="col-sm-1" style="width:1px;"></div>
+                <div class="user-pic">
+                  <%= image_tag user.image.variant(resize: "125x125").processed, class: 'img-circle' %>
+                </div>
+              <% end %>
+              <div class="row">
+                <h5><%= user.name %><br><%= user.last_name %></h5>
+                <h6 class="l-mid"><%= user.cargo %></h6>
+                <h6 class="l-mid"><%= user.area %></h6>
+              </div>
+            </a>
+          </div>
+          <br>
+        <% end %>
       <% end %>
     </div>
   </div>
