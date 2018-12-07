@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="col-sm-3" style="border: 1px solid #b7b7b7; width: 26%">
+    <div class="row" style="height: 15px;">
+    </div>
+    <div class="row">
+      <div class="col-sm-1" style="width:1%;">
+      </div>
+      <div class="col-sm-9">
+        <div class="row" style="border:5px solid #666666; border-radius:50%; height:235px; width:235px;">
+          <% if @user.image.attached? %>
+          <%= image_tag @user.image.variant(resize: "225x225").processed, class: 'img-circle' %>
+          <% else %>
+          <br><br><br><br>
+          <h2>Sin foto de perfil</h2>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h3 class="text-center"><b><%= @user.name %> <%= @user.last_name %></b></h3>
+    </div>
+    <div class="row">
+      <h5 class="text-center"><b>Cargo</b></h5>
+      <h5 class="l-mid text-center"><%= @user.cargo %></h5>
+    </div>
+    <div class="row">
+      <h5 class="text-center"><b>Área</b></h5>
+      <h5 class="l-mid text-center"><%= @user.area %></h5>
+    </div>
+    <div class="row">
+      <h5 class="text-center"><b>Anexo</b></h5>
+      <h5 class="l-mid text-center"><%= @user.anexo %></h5>
+    </div>
+    <div class="row">
+      <h5 class="text-center"><b>Correo</b></h5>
+      <h5 class="l-mid text-center"><%= @user.email %></h5>
+    </div>
+  </div>
+</div>

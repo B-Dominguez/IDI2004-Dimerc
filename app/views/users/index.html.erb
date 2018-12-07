@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <% @users.each do |user| %>
+      <%= link_to user.email, user %>
+      <% end %>
+    </div>
+  </div>
+</div>
