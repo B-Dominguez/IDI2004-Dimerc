@@ -14,4 +14,23 @@ class User < ApplicationRecord
   def reset_search_people
     self.search_person.reset
   end
+
+  def self.search(terms)
+    if terms
+      arr_name = where('name LIKE ?', "%#{terms[:name]}%").order('id DESC')
+      if terms[:cargo] != "todos los cargos"
+        arr_cargo = where('cargo LIKE ?', "%#{terms[:cargo]}%").order('id DESC')
+      else
+        arr_cargo = self.all
+      end
+      if terms[:area] != "todas las áreas"
+        arr_area = where('area LIKE ?', "%#{terms[:area]}%").order('id DESC')
+      else
+        arr_area = self.all
+      end
+      arr = arr_name & arr_cargo & arr_area
+    else
+      self.all
+    end
+  end
 end

@@ -7,7 +7,7 @@ class SearchPersonController < ApplicationController
   end
 
   def search_params
-    params.require(:search_person).permit(:area, :nombre, :cargo)
+    params.require(:search_person).permit(:area, :name, :cargo)
   end
 
   def show
@@ -18,7 +18,7 @@ class SearchPersonController < ApplicationController
     @search = current_user.search_person
     respond_to do |format|
       if @search.update(search_params)
-        format.html { redirect_to search_person_results_path, notice: 'Search was successfully updated.' }
+        format.html { redirect_to users_path}
         format.json { render :show, status: :ok, location: search_person_results_path }
       else
         format.html { render :edit }

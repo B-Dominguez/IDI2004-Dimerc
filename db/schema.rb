@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_235630) do
 
   create_table "search_people", force: :cascade do |t|
     t.string "area", default: "todas las áreas"
-    t.string "nombre", default: ""
+    t.string "name", default: ""
     t.string "cargo", default: "todos los cargos"
     t.bigint "user_id"
     t.datetime "created_at", null: false

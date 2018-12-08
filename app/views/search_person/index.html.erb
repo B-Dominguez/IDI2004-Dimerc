@@ -12,7 +12,7 @@
     </div>
     <br><br>
 
-    <%= form_for(@search, url: search_person_path) do |form| %>
+    <%= form_for(@search, url: users_path, method: :get) do |form| %>
       <% if @search.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@search.errors.count, "error")
@@ -40,7 +40,7 @@
           <br>
           <p class="lead l-mid text-center">Nombre y/o Apellido</p>
           <div class="form-group">
-            <%= form.text_field :nombre, class: "form-control" %>
+            <%= form.text_field :name, class: "form-control" %>
           </div>
         </div>
         <div class="col-sm-3">

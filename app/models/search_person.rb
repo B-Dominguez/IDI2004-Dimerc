@@ -3,7 +3,7 @@ class SearchPerson < ApplicationRecord
 
   def reset
     self.area = "todas las áreas"
-    self.nombre = ""
+    self.name = ""
     self.cargo = "todos los cargos"
   end
 
