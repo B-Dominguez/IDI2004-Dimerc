@@ -1,0 +1,2 @@
+module SearchQuestionHelper
+end
