@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  cathegory: MyString
+  rep: 1
+  solved: false
+  user: one
+
+two:
+  title: MyString
+  description: MyString
+  cathegory: MyString
+  rep: 1
+  solved: false
+  user: two
