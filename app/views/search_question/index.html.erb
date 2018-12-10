@@ -1,0 +1,53 @@
+<% if current_user == nil%>
+  <div class="jumbotron text-center">
+    <h3> Debes iniciar sesión para poder usar esta herramienta</h3>
+  </div>
+<% else %>
+  <div class="container">
+    <br><br><br>
+    <div class="row">
+      <h1 class="h-red text-center">Rellena uno o ambos campos para buscar</h1>
+      <p class="lead l-light text-center">(no es necesario escribir pregunta y
+        seleccionar categoría)</p>
+    </div>
+    <br><br>
+
+    <%= form_for(:question, url: questions_path, method: :get) do |form| %>
+      <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+          <p class="lead l-mid text-center">Pregunta</p>
+          <%= form.text_area :title, class: "form-control",:size=> "20", :style => "width:800px; height:40px;" %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8 pull-center">
+          <p class="lead l-mid text-center">Categoría</p>
+          <div class="row">
+            <div class="col-sm-5">
+
+            </div>
+            <%= form.select(:cathegory, [["todas las categorías", "todas las categorías"],
+            ["e-commerce", "e-commerce"], ["dropship", "dropship"], ["fulfillment",
+            "fulfillment"]]) %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-8" style="width:440px;">
+          </div>
+          <div class="col-sm-2">
+            <%= form.submit "Buscar", class: "btn btn-primary pull-right" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+<% end %>

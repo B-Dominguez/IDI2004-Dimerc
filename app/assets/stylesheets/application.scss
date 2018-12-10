@@ -146,3 +146,38 @@
 .user-pic {
   border-radius: 50%;
 }
+
+.question {
+    width: 1000px;
+    height: 180px;
+    display: inline;
+}
+.question h3 {
+    text-align: center;
+}
+.question h5 {
+    text-align: center;
+}
+.question h6 {
+    text-align: center;
+}
+.aForquestion:visited, .aForquestion:link,
+.aForquestion:active, .aForquestion:focus {
+    color:black;
+    background-color: white;
+    display: inline-block;
+    text-decoration:none;
+    outline: 0;
+    height: 180px;
+    width: 1000px;
+}
+.aForquestion:hover {
+    color:black;
+    background-color: white;
+    opacity: 0.4;
+    display: inline-block;
+    text-decoration:none;
+    outline: 0;
+    height: 180px;
+    width: 1000px;
+}

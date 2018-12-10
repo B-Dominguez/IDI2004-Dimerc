@@ -1,10 +1,14 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  def search_params
+    params.require(:question).permit(:title, :cathegory)
+  end
 
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    @questions = Question.search(search_params)
+    @title = search_params[:title]
   end
 
   # GET /questions/1

@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="col-sm-2">
+
+  </div>
   <div class="col-sm-3" style="border: 1px solid #b7b7b7; width: 26%">
     <div class="row" style="height: 15px;">
     </div>
@@ -35,5 +38,10 @@
       <h5 class="text-center"><b>Correo</b></h5>
       <h5 class="l-mid text-center"><%= @user.email %></h5>
     </div>
+  </div>
+  <div class="col-sm-3" style="height:549px; width:410px; border:1px
+  solid #666666;">
+    <%= @user.inception %>
+    <%= image_tag @user.map_path %>
   </div>
 </div>

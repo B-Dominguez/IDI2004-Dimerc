@@ -1,34 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="jumbotron">
+    <div class="row" style="background-color:white;">
+      <div class="question">
+        <br>
+        <div class="col-sm-2">
+          <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <% if @question.user.image.attached? %>
+            <%= image_tag @question.user.image.variant(resize: "80x80").processed, class: 'img-circle' %>
+            <% end %>
+          </div>
+          <div class="row">
+            <h6 class="l-mid"><%= @question.user.name %> <%= @question.user.last_name %></h6>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <h3 class="l-mid"><%= @question.title %></h3>
+        </div>
+        <div class="col-sm-2">
+          <h4 class="h-red">Categoría:</h4>
+          <h5 class="l-mid"><%= @question.cathegory %></h5>
+          <h4 class="h-red">Resuelta:</h4>
+          <% if @question.solved %>
+          <h5 class="l-mid">Sí</h5>
+          <% else %>
+          <h5 class="l-mid">No</h5>
+          <% end %>
+        </div>
+      </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @question.title %>
-</p>
+    </div>
+    <br>
+    <div class="row" style="background-color:white;">
+      <div class="question" style="background-color:white;">
+        <br>
+        <h4 calss="l-light"><%= @question.description %></h4>
+        <br>
+      </div>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @question.description %>
-</p>
-
-<p>
-  <strong>Cathegory:</strong>
-  <%= @question.cathegory %>
-</p>
-
-<p>
-  <strong>Rep:</strong>
-  <%= @question.rep %>
-</p>
-
-<p>
-  <strong>Solved:</strong>
-  <%= @question.solved %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @question.user %>
-</p>
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+  </div>
+</div>
