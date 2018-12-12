@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :questions
+  resources :comments
+  resources :questions do
+    resources :comments
+  end
   devise_for :users
   get 'welcome/index'
   root :to => 'welcome#index'
